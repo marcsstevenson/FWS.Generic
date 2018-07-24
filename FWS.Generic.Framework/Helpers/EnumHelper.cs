@@ -144,12 +144,11 @@ namespace FWS.Generic.Framework.Helpers
             return list1.Where(i => !list2.Contains(i)).ToList();
         }
 
-        public static T ParseEnum<T>(string value)
+        public static T ParseEnum<T>(this string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
         }
-
-
+        
         public static IEnumerable<T> ToEnumerable<T>(this string s) where T : struct, IConvertible
         {
             if (string.IsNullOrEmpty(s))
